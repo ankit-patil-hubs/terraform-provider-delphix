@@ -9,21 +9,42 @@ terraform {
 
 provider "delphix" {
   tls_insecure_skip = true
-  key = "xxx"
-  host = "localhost"
+  key               = "xxx"
+  host              = "localhost"
 }
+
+
+# {
+#   "name": "post-src",
+#   "engine_id": 7,
+#   "os_name": "UNIX",
+#   "hostname": "postgressrc.dlpxdc.co",
+#   "ssh_port": 22,
+#   "toolkit_path": "/var/tmp",
+#   "username": "postgres",
+#   "password": "postgres",
+#   "description": "Unix postgres src host",
+#   "make_current_account_owner": true,
+#    "tags": [
+#         {
+#         "key": "key-1",
+#         "value": "value-1"
+#         }
+#    ]
+# }
+
 
 /* Unix Standalone */
 resource "delphix_environment" "unixtgt" {
-     engine_id = 1
-     os_name = "UNIX"
-     username = "xxx"
-     password = "xxx"
-     hostname = "xxx"
-     toolkit_path = "/home/delphix_os/toolkit"
-     name = "unixtgt"
-     description = "This is a unix target."     
- } 
+  engine_id    = 1
+  os_name      = "UNIX"
+  username     = "xxx"
+  password     = "xxx"
+  hostname     = "xxx"
+  toolkit_path = "/home/delphix_os/toolkit"
+  name         = "unixtgt"
+  description  = "This is a unix target."
+}
 
 /* Unix Standalone using Hashicorp vault 
 resource "delphix_environment" "unixtgt" {
@@ -56,7 +77,7 @@ resource "delphix_environment" "unixtgt" {
   description  = "This is a unix target."
 } */
 
- /* Win Standalone - Target*/
+/* Win Standalone - Target*/
 /* resource "delphix_environment" "wintgt" {
      engine_id = 2
      os_name = "WINDOWS"
@@ -69,7 +90,7 @@ resource "delphix_environment" "unixtgt" {
      description = "This is a windows target."
  }  */
 
- /* Win Standalone - Source*/
+/* Win Standalone - Source*/
 /* resource "delphix_environment" "WindowsSrc" {
      engine_id = 2
      os_name = "WINDOWS"
@@ -82,7 +103,7 @@ resource "delphix_environment" "unixtgt" {
 
 
 /* Unix Standalone - All Params */
- /* resource "delphix_environment" "env_name" {
+/* resource "delphix_environment" "env_name" {
      engine_id = 2
      os_name = "UNIX"
      username = "xxx"
@@ -122,7 +143,7 @@ resource "delphix_environment" "unixtgt" {
  }   */
 
 /* Unix Cluster */
- /* resource "delphix_environment" "unixcluster" {
+/* resource "delphix_environment" "unixcluster" {
      engine_id = 2
      os_name = "UNIX"
      username = "xxx"
@@ -136,8 +157,8 @@ resource "delphix_environment" "unixtgt" {
  } */
 
 
- /* Windows Failover Cluster - Used as target */
- /* resource "delphix_environment" "fc-cluster-0" {
+/* Windows Failover Cluster - Used as target */
+/* resource "delphix_environment" "fc-cluster-0" {
      engine_id = 2
      os_name = "WINDOWS"
      username = "xxx"
